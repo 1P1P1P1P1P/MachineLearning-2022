@@ -75,7 +75,7 @@ def dataGenerated_for_multiclass(data_size, scale=0.5, class_num=2, random_state
 
 
 # 分类画图方法
-def plot_decision_function(X, y, clf, support_vectors=None, fname=None, plot_step=0.02, centers=False):
+def plot_decision_function(X, y, clf, support_vectors=None, fname=None, plot_step=0.02, centers=False, fig_format='pdf'):
     save_path = "./image"
     if not os.path.exists(save_path):
         os.mkdir(save_path)
@@ -96,8 +96,8 @@ def plot_decision_function(X, y, clf, support_vectors=None, fname=None, plot_ste
         plt.scatter(clf.centers[:, 0], clf.centers[:, 1], c='red', marker='o')
     if fname is not None:
         plt.title(fname)
-        save_name = save_path + "/" + fname + '.svg'
-        plt.savefig(save_name, format='svg')
+        save_name = save_path + "/" + fname + '.' + fig_format
+        plt.savefig(save_name, format=fig_format)
     plt.show()
 
 
