@@ -29,7 +29,7 @@ class MultiClassifier:
         if self.show_Process:
             self.Process += 1
             cls = base_classifier.train(x, y)
-            plot_decision_function(x, y, cls, fname=f"process_{self.Process}")
+            plot_decision_function(x, y, cls, fname=f"{self.mode}_process_{self.Process}")
         return base_classifier.train(x, y)
 
     @staticmethod
